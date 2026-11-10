@@ -1,16 +1,50 @@
 {
-  "name": "today-in-history",
+  "name": "@nehanahmed/today-in-history",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "build": "tsc",
-    "start": "node dist/index.js"
+  "description": "A beautiful terminal CLI to fetch and read top news headlines from around the world. Built with React and Ink for a rich interactive experience.",
+  "main": "dist/app.js",
+  "bin": {
+    "today-in-history": "./dist/app.js",
+    "today-in-history-cli": "./dist/app.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "scripts": {
+    "build": "node -e \"fs.rmSync('dist', {recursive: true, force: true})\" && tsc",
+    "prepare": "npm run build",
+    "start": "node dist/app.js"
+  },
+  "keywords": [
+    "cli",
+    "news",
+    "world-news",
+    "headlines",
+    "ink",
+    "terminal",
+    "react",
+    "today-in-history",
+    "daily-brief"
+  ],
+  "author": "Nehan Ahmed",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "type": "module",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NehanAhmed/today-in-history.git"
+  },
+  "bugs": {
+    "url": "https://github.com/NehanAhmed/today-in-history/issues"
+  },
+  "homepage": "https://github.com/NehanAhmed/today-in-history#readme",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "devDependencies": {
     "@types/node": "^26.6.6",
     "@types/react": "^19.3.0",
